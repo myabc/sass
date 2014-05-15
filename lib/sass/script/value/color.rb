@@ -574,6 +574,10 @@ module Sass::Script::Value
       alpha? ? rgba_str : hex_str
     end
 
+    def to_ruby
+      "::Sass::Script::Value::Color.new(#{@attrs.inspect}, #{representation.dump})"
+    end
+
     private
 
     def smallest

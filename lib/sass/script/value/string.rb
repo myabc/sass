@@ -85,5 +85,9 @@ module Sass::Script::Value
     def to_sass(opts = {})
       to_s
     end
+
+    def to_ruby
+      "::Sass::Script::Value::String.new(#{value.dump})"
+    end
   end
 end
